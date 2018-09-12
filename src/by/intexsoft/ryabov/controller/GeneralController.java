@@ -1,7 +1,5 @@
 package by.intexsoft.ryabov.controller;
 
-import java.time.LocalDateTime;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +20,21 @@ public class GeneralController {
    private IDriverService driverService;
    private static final Logger log = LoggerFactory.getLogger(GeneralController.class.getName());
 
+   /**
+    * Send message on main page
+    * 
+    * @return message "Hello guys!!!"
+    */
    @GetMapping
    public String Hello() {
       return "Hello guys!!!";
    }
 
+   /**
+    * Show list of drivers
+    * 
+    * @return list of drivers
+    */
    @GetMapping("drivers")
    public String drivers() {
       log.info("Get list of drivers");
@@ -35,11 +43,5 @@ public class GeneralController {
          nameDrivers += driver.getName() + "<br />";
       }
       return nameDrivers;
-   }
-
-   @GetMapping("ping")
-   public String ping() {
-      log.info("Ping successful");
-      return LocalDateTime.now().toString();
    }
 }

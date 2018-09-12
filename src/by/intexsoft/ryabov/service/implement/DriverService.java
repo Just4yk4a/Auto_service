@@ -10,7 +10,7 @@ import by.intexsoft.ryabov.repository.DriverReposytory;
 import by.intexsoft.ryabov.service.IDriverService;
 
 /**
- *
+ * Realization of interface IDriverService
  */
 @Service
 public class DriverService implements IDriverService {
